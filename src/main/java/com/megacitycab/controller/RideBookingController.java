@@ -75,6 +75,10 @@ public class RideBookingController {
         } catch (IOException e) {
             System.err.println("Error booking ride: " + e.getMessage());
         }
+        double totalAmount = 100.00;  // Here, you can implement the actual logic to calculate the amount
+
+        // Add the total amount to the model to pass it to the JSP page
+        //model.addAttribute("totalAmount", totalAmount);
         return "redirect:/ride-booking"; // Redirect to refresh the page
     }
 }

@@ -27,8 +27,9 @@ public class DriverManagementController {
     @PostMapping("/driver-management")
     public String addDriver(String driverId, String name, String license, String assignedVehicle) {
         try {
-            Driver driver = new Driver(driverId, name, license, assignedVehicle);
-            FileUtil.saveDriver(driver);  // Save the new driver
+            boolean  isBooked = false;
+            Driver driver = new Driver(driverId, name, license, assignedVehicle, isBooked);
+            FileUtil.saveDriver(driver);
         } catch (IOException e) {
             e.printStackTrace();  // Log or handle the exception as needed
         }

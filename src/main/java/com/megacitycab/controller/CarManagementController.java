@@ -24,6 +24,11 @@ public class CarManagementController {
         return "car-management"; // Resolves to /WEB-INF/car-management.jsp
     }
 
+    @GetMapping("/driverManagement")
+    public String redirectToDriverManagement() {
+        return "redirect:/driver-management"; // Redirect to the driver management page
+    }
+
     // POST request to add a new car
     @PostMapping("/car-management")
     public String addCar(
