@@ -4,6 +4,12 @@
 <html>
 <head>
     <title>Ride Booking</title>
+    <script type="text/javascript">
+        // Function to show the pop-up with the total amount
+        function showPopup(amount) {
+            alert("Ride booked successfully! Total amount: $" + amount);
+        }
+    </script>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4;">
 
@@ -55,6 +61,14 @@
             </tr>
         <% } %>
     </table>
+
+    <%-- Show the pop-up with the total amount after successful booking --%>
+    <% String totalAmount = (String) request.getAttribute("totalAmount"); %>
+    <% if (totalAmount != null) { %>
+        <script type="text/javascript">
+            showPopup("<%= totalAmount %>");
+        </script>
+    <% } %>
 
 </body>
 </html>

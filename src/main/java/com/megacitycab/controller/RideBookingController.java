@@ -1,5 +1,6 @@
 package com.megacitycab.controller;
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.megacitycab.model.Driver;
 import com.megacitycab.model.Ride;
 import com.megacitycab.util.FileUtil;
@@ -42,7 +43,8 @@ public class RideBookingController {
     @PostMapping("/ride-booking")
     public String bookRide(@RequestParam String pickup,
                            @RequestParam String destination,
-                           @RequestParam String time) {
+                           @RequestParam String time,
+                           Model model, RedirectAttributes redirectAttributes) {
         try {
 
             List<Driver> drivers = FileUtil.getDrivers();
@@ -50,7 +52,7 @@ public class RideBookingController {
             boolean isAvailable = false;
             Driver availableDriver = null;  // Declare a variable to hold the available driver
 
-// Loop through the drivers to check availability
+            // Loop through the drivers to check availability
             for (Driver driver : drivers) {
                 if (!driver.getBooked()) {
                     availableDriver = driver;  // Store the first available driver
@@ -75,10 +77,25 @@ public class RideBookingController {
         } catch (IOException e) {
             System.err.println("Error booking ride: " + e.getMessage());
         }
-        double totalAmount = 100.00;  // Here, you can implement the actual logic to calculate the amount
 
-        // Add the total amount to the model to pass it to the JSP page
-        //model.addAttribute("totalAmount", totalAmount);
-        return "redirect:/ride-booking"; // Redirect to refresh the page
+        // Calculate the total amount (for now, it's hardcoded)
+        double totalAmount = 100.00;  // Replace with your logic to calculate the amount
+
+        // Add the total amount to RedirectAttributes to pass it to the redirected page
+        redirectAttributes.addFlashAttribute("totalAmount", totalAmount);
+
+        // Redirect to the bill page
+        return "redirect:/bill"; // Redirect to the bill page where the total amount will be displayed
     }
+
+    // GET request to display the bill page with the total amount
+    @GetMapping("/bill")
+    public String showBillPage(Model model) {
+        // The totalAmount will be available in the model as a flash attribute
+        // because it was passed using RedirectAttributes.
+        return "bill"; // Resolves to bill.jsp
+    }
+
+
+
 }
