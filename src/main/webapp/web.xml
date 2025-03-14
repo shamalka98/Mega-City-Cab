@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>MegaCityCab</display-name>
+
+    <!-- Servlet Configuration -->
+    <servlet>
+        <servlet-name>CarManagementServlet</servlet-name>
+        <servlet-class>com.megacitycab.controller.CarManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarManagementServlet</servlet-name>
+        <url-pattern>/car-management</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DriverManagementServlet</servlet-name>
+        <servlet-class>com.megacitycab.controller.DriverManagementServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DriverManagementServlet</servlet-name>
+        <url-pattern>/driver-management</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome File -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
