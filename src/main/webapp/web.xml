@@ -27,6 +27,15 @@
         <url-pattern>/driver-management</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CarManagementServlet</servlet-name>
+        <servlet-class>com.megacitycab.controller.CarManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarManagementServlet</servlet-name>
+        <url-pattern>/car-management</url-pattern>
+    </servlet-mapping>
+
     <!-- Welcome File -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
