@@ -5,17 +5,12 @@ public class Driver {
     private String name;
     private String license;
     private String assignedVehicle;
-    private boolean isBooked;
 
-    public Driver() {
-    }
-
-    public Driver(String driverId, String name, String license, String assignedVehicle, boolean isBooked) {
+    public Driver(String driverId, String name, String license, String assignedVehicle) {
         this.driverId = driverId;
         this.name = name;
         this.license = license;
         this.assignedVehicle = assignedVehicle;
-        this.isBooked = false;
     }
 
     public String getDriverId() {
@@ -38,7 +33,6 @@ public class Driver {
         return license;
     }
 
-
     public void setLicense(String license) {
         this.license = license;
     }
@@ -49,13 +43,5 @@ public class Driver {
 
     public void setAssignedVehicle(String assignedVehicle) {
         this.assignedVehicle = assignedVehicle;
-    }
-
-    public Boolean getBooked() {
-        return isBooked;
-    }
-
-    public void setBooked(Boolean booked) {
-        this.isBooked = booked;
     }
 }
