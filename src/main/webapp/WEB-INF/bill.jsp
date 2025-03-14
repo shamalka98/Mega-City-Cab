@@ -19,7 +19,24 @@
                 Go Back to Ride Booking
             </button>
         </form>
+
+        <!-- Help Button -->
+        <button onclick="showHelp()" style="padding: 10px 20px; background-color: #ffc107; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px;">
+            Help
+        </button>
+
+        <form action="/login" method="get">
+                    <button type="submit" style="padding: 10px 20px; background-color: #dc3545; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px;">
+                        Exit
+                    </button>
     </div>
+
+    <!-- Help Popup Script -->
+    <script type="text/javascript">
+        function showHelp() {
+            alert("Help: To book a ride, fill out the form with pickup location, destination, and time.");
+        }
+    </script>
 
 </body>
 </html>

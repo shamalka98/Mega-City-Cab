@@ -9,6 +9,21 @@
         function showPopup(amount) {
             alert("Ride booked successfully! Total amount: $" + amount);
         }
+
+        // Help Popup Script
+        function showHelp() {
+            alert("Help: To book a ride, please fill out the form with the following details:\n\n" +
+                  "1. Pickup Location: The location where you want to be picked up.\n" +
+                  "2. Destination: The location where you want to go.\n" +
+                  "3. Pickup Time: Choose the time you want the ride to be scheduled.\n\n" +
+                  "Once the form is filled out, click 'Book Ride' to confirm your booking.\n\n" +
+                  "You can also see the list of available rides below.");
+        }
+
+        // Exit Function (closes the current window)
+        function exitPage() {
+            window.close();  // This will directly close the current window
+        }
     </script>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4;">
@@ -34,6 +49,22 @@
             Book Ride
         </button>
     </form>
+
+    <!-- Centered Help Button (before the table) -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="showHelp()" style="padding: 10px 20px; background-color: #ffc107; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px;">
+            Help
+        </button>
+    </div>
+
+    <!-- Centered Exit Button (before the table) -->
+    <div style="text-align: center; margin-top: 20px;">
+            <form action="/login" method="get">
+                <button type="submit" style="padding: 10px 20px; background-color: #dc3545; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    Exit
+                </button>
+            </form>
+        </div>
 
     <h3 style="text-align: center; margin-top: 20px; color: #333;">Car List</h3>
 

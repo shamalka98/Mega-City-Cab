@@ -27,6 +27,22 @@
         </button>
     </form>
 
+    <!-- Centered Help Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="showHelp()" style="padding: 10px 20px; background-color: #ffc107; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Help
+        </button>
+    </div>
+
+    <!-- Exit Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <form action="/login" method="get">
+            <button type="submit" style="padding: 10px 20px; background-color: #dc3545; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                Exit
+            </button>
+        </form>
+    </div>
+
     <h3 style="text-align: center; margin-top: 20px; color: #333;">Driver List</h3>
 
     <table style="width: 80%; margin: 0 auto; border-collapse: collapse; background: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
@@ -52,6 +68,13 @@
             </tr>
         <% } %>
     </table>
+
+    <!-- Help Popup Script -->
+    <script type="text/javascript">
+        function showHelp() {
+            alert("Help: To manage drivers, use the form to add new drivers. You must provide the Driver ID, Name, License, and Assigned Vehicle. You can view the list of current drivers below the form.");
+        }
+    </script>
 
 </body>
 </html>
